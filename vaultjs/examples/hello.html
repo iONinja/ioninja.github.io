@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Vault.js example: hello</title>
+		<script src="../vault.min.js"></script>
+	</head>
+	<body>
+		<script>
+			name = "";
+			vault.sync("name");
+			if (vault.page.new) {
+				name = prompt("What's your name?");
+				alert("Refresh the page...");
+			} else {
+				alert("Hello there, "+name);
+			};
+		</script>
+	</body>
+</html>
