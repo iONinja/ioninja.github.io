@@ -44,21 +44,36 @@ if (!Object.prototype.unwatch) {
 var vault = {
 	_load: function() {
 		if (localStorage.vault) {
-			this._variables = JSON.parse(localStorage.vault);
-			this.user.new = false;
-			this.user.returning = true;
+			o = JSON.parse(localStorage.vault);
+			this._variables = o.variables;
+			this._pages = o.pages;
+			this.domain.new = false;
+			this.domain.returning = true;
 		} else {
-			localStorage.vault = JSON.stringify({});
+			localStorage.vault = JSON.stringify({pages:[],variables:{}});
+		};
+		l = window.location.pathname;
+		if (this._pages.indexOf(l) < 0) {
+			this._pages.push(l);
+		} else {
+			this.page.new = false;
+			this.page.returning = true;
 		};
 	},
 	_save: function() {
-		localStorage.vault = JSON.stringify(this._variables);
+		localStorage.vault = JSON.stringify({pages:this._pages,variables:this._variables});
 	},
 	_variables: {
 	},
 	_names: [
 	],
-	user: {
+	_pages: [
+	],
+	domain: {
+		new: true,
+		returning: false
+	},
+	page: {
 		new: true,
 		returning: false
 	},
@@ -86,8 +101,10 @@ var vault = {
 	wipe: function() {
 		this._variables = {};
 		this._names = [];
-		this.user.new = true;
-		this.user.returning = false;
+		this.domain.new = true;
+		this.domain.returning = false;
+		this.page.new = true;
+		this.page.returning = false;
 		delete localStorage.vault;
 	}
 };
