@@ -64,15 +64,10 @@ var vault = {
 	},
 	sync: function() {
 		for (i=0;i<arguments.length;i++) {
-			n = null;
-			for (j in window) {
-				if (window[j] == arguments[i]) {
-					n = j;
-				};
-			};
+			n = arguments[i];
 			if (n) {
 				this._names.push(n);
-				if (this._variables[n]) {
+				if (this._variables[n] != undefined) {
 					window[n] = this._variables[n];
 				} else {
 					this._variables[n] = window[n];
@@ -84,6 +79,7 @@ var vault = {
 					vault._variables[n] = v2;
 					vault._save();
 				};
+				return v2;
 			});
 		};
 	},
