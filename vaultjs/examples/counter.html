@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>Vault.js example: counter</title>
+		<script src="vault.min.js"></script>
+	</head>
+	<body>
+		<script>
+			number = 0; // Initialise number to 0
+			vault.sync("number"); // Sync variable with storage
+			number++; // Increase number by 1
+			alert(number); // Create alert with the new number
+		</script>
+	</body>
+</html>
