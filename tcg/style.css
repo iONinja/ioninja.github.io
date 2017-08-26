@@ -1,0 +1,73 @@
+body {
+    opacity: 0;
+    transition: opacity 0.5s;
+    overflow: hidden;
+}
+
+#board {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+}
+
+.column {
+    display: inline-block;
+}
+
+.card, .cardf {
+    position: relative;
+    display: inline-block;
+    margin: 8px;
+    padding: 0px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.card {
+    width: 100px;
+    height: 66px;
+    background-color: #cccccc;
+}
+
+.cardf {
+    width: 100px;
+    height: 132px;
+    background-color: #dddddd;
+}
+
+.cardh {
+    margin-left: -20px;
+    margin-right: -20px;
+    transition: transform 0.1s;
+    transform-origin: 50% 100%;
+}
+
+.cardimage {
+    background-image: url("http://www.cutestpaw.com/wp-content/uploads/2011/11/friend.jpg");
+    background-size: cover;
+}
+
+.gap {
+    height: 8px;
+}
+
+.hand {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%,50%);
+    transition: transform 0.5s;
+}
+
+#deck {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    text-align: center;
+    font-family: arial;
+    font-size: 11px;
+}
