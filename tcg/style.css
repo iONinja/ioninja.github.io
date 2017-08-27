@@ -47,7 +47,7 @@ body {
 }
 
 .cardimage {
-    background-image: url("http://www.cutestpaw.com/wp-content/uploads/2011/11/friend.jpg");
+    background-image: url("http://cdn.litlepups.net/2015/11/26/cute-birds-hd-wallpapers-3-jpg.jpg");
     background-size: cover;
 }
 
@@ -70,4 +70,53 @@ body {
     text-align: center;
     font-family: arial;
     font-size: 11px;
+}
+
+.avatar {
+    position: absolute;
+    right: 100px;
+    bottom: 90px;
+    width: 160px;
+    height: 190px;
+    border-radius: 50%;
+    background-image: url("https://vignette2.wikia.nocookie.net/lotr/images/8/8d/Gandalf-2.jpg/revision/latest?cb=20130209172436");
+    background-size: cover;
+    background-position: center;
+    border: 2px solid black;
+}
+
+.hp {
+    position: absolute;
+    right: 100px;
+    bottom: 55px;
+}
+
+.magic {
+    position: absolute;
+    right: 100px;
+    bottom: 22px;
+}
+
+.circle {
+    width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+    display: inline-block;
+}
+
+.bar-under {
+    width: 130px;
+    height: 20px;
+    background-color: pink;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    right: -25px;
+    z-index: -1;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
